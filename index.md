@@ -14,30 +14,30 @@ We are using an ESP32-C3 board.  We need to add the ESP32 family of boards to th
 ](https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 )
 
-Then in the menu bar find Tools | Board | Boards Manager and search for esp32.  Find "esp32 by Espressif Systems" and click on Install.
+Then in the menu bar find Tools >> Board >> Boards Manager and search for esp32.  Find "esp32 by Espressif Systems" and click on Install.
 
 
 ## Connect to the ESP32
-Plug the ESP32 into your computer using a USB cable. Now go to Tools | Board and select esp32 | ESP32C3 Dev Module.
+Plug the ESP32 into your computer using a USB cable. Now go to Tools >> Board and select esp32 >> ESP32C3 Dev Module.
 
-Then go to Tools | Port and look for a likely candidate. Depending on what type of computer you are using, it might look something like COM1, or it might be something like /dev/cu.usbmodem3201.  One way to tell is to unplug the board and see what dissappears from the list. Then plug it back in and select that.
+Then go to Tools >> Port and look for a likely candidate. Depending on what type of computer you are using, it might look something like COM1, or it might be something like /dev/cu.usbmodem3201.  One way to tell is to unplug the board and see what dissappears from the list. Then plug it back in and select that.
 
 ## Exercise 1: Blink
 The ESP32-C3 has an RGB light that we can control.  Just to get started, lets make it blink.
 
 This RGB light is of a type called a neopixel, made by a company called Adafruit. To use it, we need to install a library called Adafruit_neopixel
 
-Go to Tools | Manage Libraries, and search for "Adafruit Neopixel". There may be a bunch with a similar name, but you want the one called exactly that. Click on Install.
+Go to Tools >> Manage Libraries, and search for "Adafruit Neopixel". There may be a bunch with a similar name, but you want the one called exactly that. Click on Install.
 
-Now go to File | Open and open WindWorkshop1_Blink.ino
+Now go to File >> Open and open WindWorkshop1_Blink.ino
 
 Click on the "tick" button in the top left corner of the window. This will check that the code makes sense. If there are no problems, click on the left arrow button, which will send the code to the ESP32.
 
 If it uploads correctly, it should start flashing blue.
 
-It should also print out a message. To see this message, we need to use Tools | Serial Monitor. This should open a console where message can appear. Make sure you select 115200 baud if it isn't already.
+It should also print out a message. To see this message, we need to use Tools >> Serial Monitor. This should open a console where message can appear. Make sure you select 115200 baud if it isn't already.
 
-You might need to also ensure that Tools | USB CDC on Boot is enabled. If not, enable it, and unplug/replug your ESP32.
+You might need to also ensure that Tools >> USB CDC on Boot is enabled. If not, enable it, and unplug/replug your ESP32.
 
 
 ## Exercise 2: Analog Input
@@ -47,7 +47,7 @@ Connect one output of the wind sensor to ground, and the other to GP1. For the m
 
 Upload the program WindWorkshop2_AnalogSensor, and check the serial monitor.  It should be printing out values between 0 and 4095. We want the numbers to be bigger when the wind sensor is spinning in the right direction. Very gently turn the sensor. If the numbers are going to wrong way, then switch the wires from the sensor around. Then add a Schottky diode in reverse bias to prevent negative voltages from reaching the input pin of the ESP32.
 
-Now have a look at the signal using Tools | Serial Plotter.  Try spinning the sensor forwards and backwards (assuming you have added the backwards protection diode).
+Now have a look at the signal using Tools >> Serial Plotter.  Try spinning the sensor forwards and backwards (assuming you have added the backwards protection diode).
 
 You may want to smooth the signal by adding a LowPass filter with a capacitor and resistor (1 microFarad and 100 kiloOhms are reasonable values).
 
